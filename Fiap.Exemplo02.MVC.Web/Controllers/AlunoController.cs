@@ -66,5 +66,15 @@ namespace Fiap.Exemplo02.MVC.Web.Controllers
 
             return RedirectToAction("Listar");
         }
+
+        [HttpGet]
+        public ActionResult Buscar(string nomeBusca)
+        {
+            // Busca  o aluno por parte do nome
+            var lista = _context.Aluno.Where(a => a.Nome.Contains(nomeBusca)).ToList();
+
+            // Retorna para a view com a lista
+            return View("Listar", lista);
+        }
     }
 }
