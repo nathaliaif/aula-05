@@ -1,0 +1,35 @@
+﻿@model ICollection<Fiap.Exemplo02.MVC.Web.Models.Aluno>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+@Helper.Message(TempData["msg"], "alert alert-success")
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data Nascimento</th>
+            <th>Bolsa</th>
+            <th>Desconto</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.DataNascimento</td>
+                <td>@item.Bolsa</td>
+                <td>@item.Desconto</td>
+                <td>
+                @Html.ActionLink("Editar", "Editar", new {  id = @item.Id }, new { @class="btn btn-primary" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
