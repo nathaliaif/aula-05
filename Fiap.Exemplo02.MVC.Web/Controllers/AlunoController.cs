@@ -55,5 +55,16 @@ namespace Fiap.Exemplo02.MVC.Web.Controllers
 
             return RedirectToAction("Listar");
         }
+
+        public ActionResult Excluir(int alunoId)
+        {
+            var aluno = _context.Aluno.Find(alunoId);
+            _context.Aluno.Remove(aluno);
+            _context.SaveChanges();
+
+            TempData["msg"] = "Aluno excluido";
+
+            return RedirectToAction("Listar");
+        }
     }
 }
