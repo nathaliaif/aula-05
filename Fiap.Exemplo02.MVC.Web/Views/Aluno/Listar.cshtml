@@ -23,6 +23,7 @@
         <tr>
             <th>Nome</th>
             <th>Data Nascimento</th>
+            <th>Grupo</th>
             <th>Bolsa</th>
             <th>Desconto</th>
             <th></th>
@@ -34,13 +35,14 @@
             <tr>
                 <td>@item.Nome</td>
                 <td>@item.DataNascimento</td>
+                <td>@item.Grupo.Nome</td>
                 <td>@item.Bolsa</td>
                 <td>@item.Desconto</td>
                 <td>
                     @Html.ActionLink("Editar", "Editar", new { id = @item.Id }, new { @class = "btn btn-success btn-xs " })
                     <!-- Button trigger modal -->
                     <button onclick="alunoId.value = @item.Id" type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
-                       <span class="glyphicon glyphicon-remove"></span>
+                       <i class="glyphicon glyphicon-remove"></i>
                     </button>
                 </td>
             </tr>

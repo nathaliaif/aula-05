@@ -36,13 +36,17 @@ namespace Fiap.Exemplo02.MVC.Web.Controllers
         [HttpGet]
         public ActionResult Listar()
         {
-            var lista = _context.Aluno.ToList();
+            // Include -> busca o relacionamento (preenche o grupo que o aluno possui)
+            var lista = _context.Aluno.Include("Grupo").ToList();
             return View(lista);
         }
 
         [HttpGet]
         public ActionResult Editar(int id)
         {
+            var lista = _context.Grupo.ToList();
+            ViewBag.grupos = new SelectList(lista, "Id", "Nome");
+
             // Buscar o objeto (aluno) no banco 
             var aluno = _context.Aluno.Find(id);
 

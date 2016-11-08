@@ -38,6 +38,10 @@ public partial class PortalContext : DbContext
 
     public virtual DbSet<Projeto> Projeto { get; set; }
 
+    public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
+
+    public virtual DbSet<Professor> Professor { get; set; }
+
 }
 
 }
