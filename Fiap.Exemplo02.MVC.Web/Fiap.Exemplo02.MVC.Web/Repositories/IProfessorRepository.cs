@@ -10,6 +10,6 @@ namespace Fiap.Exemplo02.MVC.Web.Repositories
 {
     public interface IProfessorRepository : IGenericRepository<Professor>
     {
-        void Promocao(double valor);
+        void Promocao(int id, decimal valor);
     }
 }

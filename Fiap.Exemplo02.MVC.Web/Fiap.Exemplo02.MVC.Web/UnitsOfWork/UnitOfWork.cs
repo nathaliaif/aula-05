@@ -10,17 +10,18 @@ namespace Fiap.Exemplo02.MVC.Web.UnitsOfWork
 {
     public class UnitOfWork : IDisposable
     {
-        #region PRIVATE
+        #region FIELDS
         private PortalContext _context = new PortalContext();
 
         private IGenericRepository<Grupo> _grupoRepository;
 
         private IGenericRepository<Aluno> _alunoRepository;
 
-        private IGenericRepository<Professor> _professorRepository;
+        private IProfessorRepository _professorRepository;
+
         #endregion
 
-        #region public
+        #region GET
         public IGenericRepository<Grupo> GrupoRepository
         {
             get
@@ -45,13 +46,13 @@ namespace Fiap.Exemplo02.MVC.Web.UnitsOfWork
             }
         }
 
-        public IGenericRepository<Professor> ProfessorRepository
+        public IProfessorRepository ProfessorRepository
         {
             get
             {
                 if (_professorRepository == null)
                 {
-                    _professorRepository = new GenericRepository<Professor>(_context);
+                    _professorRepository = new ProfessorRepository(_context);
                 }
                 return _professorRepository;
             }

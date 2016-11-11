@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Fiap.Exemplo02.MVC.Web.Repositories
 {
-    class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private PortalContext _context;
-        private DbSet<T> _dbSet;
+        protected PortalContext _context;
+        protected DbSet<T> _dbSet;
 
         public GenericRepository(PortalContext context)
         {
@@ -19,32 +19,32 @@ namespace Fiap.Exemplo02.MVC.Web.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public void Alterar(T entidade)
+        public virtual void Alterar(T entidade)
         {
             _context.Entry(entidade).State = System.Data.Entity.EntityState.Modified;
         }
 
-        public ICollection<T> BuscarPor(System.Linq.Expressions.Expression<Func<T, bool>> filtro)
+        public virtual ICollection<T> BuscarPor(System.Linq.Expressions.Expression<Func<T, bool>> filtro)
         {
             return _dbSet.Where(filtro).ToList();
         }
 
-        public T BuscarPorId(int id)
+        public virtual T BuscarPorId(int id)
         {
             return _dbSet.Find(id);
         }
 
-        public void Cadastrar(T entidade)
+        public virtual void Cadastrar(T entidade)
         {
             _dbSet.Add(entidade);
         }
 
-        public ICollection<T> Listar()
+        public virtual ICollection<T> Listar()
         {
             return _dbSet.ToList();
         }
 
-        public void Remover(int id)
+        public virtual void Remover(int id)
         {
            var entidade = BuscarPorId(id);
             _dbSet.Remove(entidade);
