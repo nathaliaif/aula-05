@@ -1,7 +1,11 @@
 
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/visual,visualstudio
 
 #!! ERROR: visual is undefined. Use list command to see defined gitignore types !!#
+=======
+# Created by https://www.gitignore.io/api/visualstudio
+>>>>>>> f7bcd9f6698c21de5a1cf7675457925064218d24
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -50,6 +54,10 @@ dlldata.c
 project.lock.json
 project.fragment.lock.json
 artifacts/
+<<<<<<< HEAD
+=======
+Properties/launchSettings.json
+>>>>>>> f7bcd9f6698c21de5a1cf7675457925064218d24
 
 *_i.c
 *_p.c
@@ -244,6 +252,12 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
+<<<<<<< HEAD
+=======
+# Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
+*.vbw
+
+>>>>>>> f7bcd9f6698c21de5a1cf7675457925064218d24
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
 **/*.DesktopClient/GeneratedArtifacts
@@ -270,5 +284,13 @@ paket-files/
 __pycache__/
 *.pyc
 
+<<<<<<< HEAD
 ### VisualStudio Patch ###
 build/
+=======
+# Cake - Uncomment if you are using it
+# tools/
+
+### VisualStudio Patch ###
+build/
+>>>>>>> f7bcd9f6698c21de5a1cf7675457925064218d24
